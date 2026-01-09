@@ -92,5 +92,36 @@ public class StudentManager {
             System.out.println("Student not found.");
         }
     }
+    public void updateStudent(Scanner scanner) {
+        System.out.print("Enter Student ID to update: ");
+        int id = scanner.nextInt();
+
+        scanner.nextLine(); // clear buffer
+        boolean found = false;
+
+        for (Student s : students) {
+            if (s.getId() == id) {
+                System.out.print("Enter new name: ");
+                String newName = scanner.nextLine();
+
+                System.out.print("Enter new age: ");
+                int newAge = scanner.nextInt();
+
+                // Update values
+                s.setName(newName);
+                s.setAge(newAge);
+
+                saveToFile();
+                found = true;
+                System.out.println("Student updated successfully!");
+                break;
+            }
+        }
+
+        if (!found) {
+            System.out.println("Student not found.");
+        }
+    }
+
 
 }
