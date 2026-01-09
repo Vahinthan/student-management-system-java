@@ -11,6 +11,7 @@ public class Main {
             System.out.println("\n--- Student Management System ---");
             System.out.println("1. Add Student");
             System.out.println("2. View Students");
+            System.out.println("3. Delete Student");
             System.out.println("3. Exit");
             System.out.print("Enter your choice: ");
 
@@ -23,9 +24,13 @@ public class Main {
                 manager.viewStudents();
             }
             else if (choice == 3) {
+                manager.deleteStudent(scanner);
+            }
+            else if (choice == 4) {
                 System.out.println("Exiting program...");
                 break;
             }
+
             else {
                 System.out.println("Invalid choice. Try again.");
             }

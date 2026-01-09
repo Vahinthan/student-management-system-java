@@ -71,4 +71,26 @@ public class StudentManager {
             System.out.println("Error loading data.");
         }
     }
+    public void deleteStudent(Scanner scanner) {
+        System.out.print("Enter Student ID to delete: ");
+        int id = scanner.nextInt();
+
+        boolean removed = false;
+
+        for (int i = 0; i < students.size(); i++) {
+            if (students.get(i).getId() == id) {
+                students.remove(i);
+                removed = true;
+                break;
+            }
+        }
+
+        if (removed) {
+            saveToFile();
+            System.out.println("Student deleted successfully!");
+        } else {
+            System.out.println("Student not found.");
+        }
+    }
+
 }
