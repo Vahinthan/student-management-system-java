@@ -1,6 +1,9 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Student Management System");
-        System.out.println("Project by Vahinthan");
+        Student s1 = new Student(1, "Kamal", 20);
+        Student s2 = new Student(2, "Nimal", 21);
+
+        System.out.println(s1);
+        System.out.println(s2);
     }
 }
